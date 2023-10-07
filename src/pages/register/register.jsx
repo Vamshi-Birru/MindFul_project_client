@@ -70,7 +70,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-        const response=await axios.post("http://localhost:8080/register",{name,email,phone,gender,hearAbout,city,state,password});
+        const response=await axios.post("https://mindful-project-backend.onrender.com/register",{name,email,phone,gender,hearAbout,city,state,password});
         alert("Successfully registered");
         GotoLogin();
     }

@@ -21,7 +21,7 @@ const Home = () => {
   const fetchUsers = async () => {
     try {
 
-      const response = await axios.get("http://localhost:8080/crud/get", config);
+      const response = await axios.get("https://mindful-project-backend.onrender.com/crud/get", config);
       console.log(response);
       setUsers(response.data);
     }
@@ -38,7 +38,7 @@ const Home = () => {
     
     try{
       console.log('Submitted User Data:', userData);
-      const response=await axios.post("http://localhost:8080/crud/create",userData,config);
+      const response=await axios.post("https://mindful-project-backend.onrender.com/crud/create",userData,config);
       console.log(response);
       setIsAddingUser(false);
     }

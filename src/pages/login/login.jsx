@@ -27,7 +27,7 @@ export default function Login() {
     const letsDoIt = async () => {
         try {
             const email=username;
-            const response = await axios.post('http://localhost:8080/login', { email, password });
+            const response = await axios.post('https://mindful-project-backend.onrender.com/login', { email, password });
             const userId=response.data._id;
             const name=response.data.name;
             updateUser({userId,name});
