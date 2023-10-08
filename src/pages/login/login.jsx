@@ -4,6 +4,8 @@ import axios from 'axios';
 import "./Login.css";
 import { useContext } from 'react';
 import { UserContext } from '../../components/UserContext';
+import Cookies from 'js-cookie';
+
 
 export default function Login() {
     const [username, setUsername] = useState();
@@ -31,6 +33,8 @@ export default function Login() {
             const userId=response.data._id;
             const name=response.data.name;
             updateUser({userId,name});
+            Cookies.set('name', name, { expires: 1 });
+            Cookies.set('userId', userId, { expires: 1 });
             navigate("/Home");
 
         }
